@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JM CAPS</title>
+    <!-- Importar Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos para el efecto del logo */
         body, html {
@@ -16,6 +18,11 @@
             align-items: center;
             background-color: white;
             overflow: hidden;
+            font-family: 'Montserrat', sans-serif; /* Aplicar la fuente moderna */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; /* Aplicar la fuente más elegante a encabezados */
         }
 
         #logo-container {
@@ -42,7 +49,6 @@
             display: none;
             background-color: #ffffff;
             color: #333333;
-            font-family: Arial, sans-serif;
             padding: 20px;
             text-align: center;
         }
@@ -54,25 +60,22 @@
             padding: 10px;
         }
 
-        .MUJERES {
-        background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/DAMA.jpeg'); /* Añade la URL aquí */
-        background-size: cover; /* Hace que la imagen cubra todo el div */
-        background-position: center; /* Centra la imagen en el div */
-        padding: 30px;
-        margin: 30px;
-        border-radius: 8px;
-        color: #ffffff;
-    }
+        .MUJERES, .HOMBRES {
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            margin: 30px;
+            border-radius: 8px;
+            color: #ffffff;
+        }
 
-    .HOMBRES {
-        background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/CABALLERO.jpeg'); /* Añade la URL aquí */
-        background-size: cover; /* Hace que la imagen cubra todo el div */
-        background-position: center; /* Centra la imagen en el div */
-        padding: 30px;
-        margin: 30px;
-        border-radius: 8px;
-        color: #ffffff;
-    }
+        .MUJERES {
+            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/DAMA.jpeg');
+        }
+
+        .HOMBRES {
+            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/CABALLERO.jpeg');
+        }
 
         .btn {
             background-color: #000000;
@@ -82,6 +85,7 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            font-family: 'Montserrat', sans-serif; /* Aplicar la fuente en botones */
         }
 
         .btn:hover {
@@ -106,13 +110,12 @@
             <h2>Nuestros Productos</h2>
             <div class="HOMBRES">
                 <h3>BOLSO CABALLEROS</h3>
-              <a href="https://jmcaps.github.io/CABALLERO/" <button class="btn">Comprar ahora</button> </a>
+                <a href="https://jmcaps.github.io/CABALLERO/"><button class="btn">Comprar ahora</button></a>
             </div>
             <div class="MUJERES">
                 <h3>BOLSO DAMAS</h3>
-                <a href="https://jmcaps.github.io/DAMAS/" <button class="btn">Comprar ahora</button> </a>
+                <a href="https://jmcaps.github.io/DAMAS/"><button class="btn">Comprar ahora</button></a>
             </div>
-            <!-- Añade más productos si deseas -->
         </section>
 
         <footer>
@@ -128,7 +131,6 @@
                 document.getElementById('logo-container').style.display = 'none';
                 document.getElementById('main-page').style.display = 'block';
             }, 1000);
-
         }, 2000);
     </script>
 
