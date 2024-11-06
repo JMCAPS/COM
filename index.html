@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JM CAPS</title>
+    
+    <!-- Favicon para el logo -->
+    <link rel="icon" href="https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/LOGO.jpeg" type="image/jpeg">
+    
     <!-- Importar Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -13,29 +17,24 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            overflow: hidden;
-            font-family: 'Montserrat', sans-serif; /* Aplicar la fuente moderna */
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* Aplicar la fuente más elegante a encabezados */
-        }
-
+        /* Efecto inicial del logo */
         #logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100vh;
             opacity: 1;
             transition: opacity 1s ease;
         }
 
         #logo {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -44,52 +43,124 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* Estilos de la página principal */
+        /* Estilos principales */
         #main-page {
             display: none;
+        }
+
+        /* Encabezado con estilo mejorado */
+        header {
             background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
             color: #333333;
-            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        header:hover img {
+            transform: scale(1.1);
+        }
+
+        header:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        /* Sección de productos */
+        .section-title {
+            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            margin: 40px 0 20px;
             text-align: center;
+            color: #333333;
         }
 
-        /* Colores y estilo general */
-        header, footer {
-            background-color: #a38068;
-            color: #ffffff;
-            padding: 10px;
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 0 10px;
         }
 
-        .MUJERES, .HOMBRES {
+        .product {
+            width: 300px;
+            height: 400px;
             background-size: cover;
             background-position: center;
-            padding: 30px;
-            margin: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
             color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .MUJERES {
-            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/DAMA.jpeg');
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .HOMBRES {
-            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/CABALLERO.jpeg');
+        .product h3 {
+            font-size: 24px;
+            margin: 0 0 10px 10px;
+            color: black;
         }
 
-        .btn {
+        .product .btn {
             background-color: #000000;
             color: #ffffff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            margin: 10px;
             transition: background-color 0.3s ease;
-            font-family: 'Montserrat', sans-serif; /* Aplicar la fuente en botones */
         }
 
-        .btn:hover {
+        .product .btn:hover {
             background-color: #333333;
+        }
+
+        /* Estilos para imágenes de productos */
+        .HOMBRES {
+            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/CABALLERO.jpeg');
+        }
+
+        .MUJERES {
+            background-image: url('https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/DAMA.jpeg');
+        }
+
+        /* Footer elegante */
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -103,18 +174,21 @@
     <!-- Página principal de la tienda -->
     <div id="main-page">
         <header>
-            <h1>MODA Y ESTILO A TU ALCANCE</h1>
+            <img src="https://raw.githubusercontent.com/JMCAPS/P-gina-web-jmcaps/refs/heads/main/LOGO.jpeg" alt="JM CAPS Logo">
+            JM CAPS
         </header>
 
-        <section>
-            <h2>Nuestros Productos</h2>
-            <div class="HOMBRES">
-                <h3>BOLSO CABALLEROS</h3>
-                <a href="https://jmcaps.github.io/CABALLERO/"><button class="btn">Comprar ahora</button></a>
-            </div>
-            <div class="MUJERES">
-                <h3>BOLSO DAMAS</h3>
-                <a href="https://jmcaps.github.io/DAMAS/"><button class="btn">Comprar ahora</button></a>
+        <section id="productos">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="product-container">
+                <div class="product HOMBRES">
+                    <h3>BOLSO CABALLEROS</h3>
+                    <a href="https://jmcaps.github.io/CABALLERO/"><button class="btn">Comprar ahora</button></a>
+                </div>
+                <div class="product MUJERES">
+                    <h3>BOLSO DAMAS</h3>
+                    <a href="https://jmcaps.github.io/DAMAS/"><button class="btn">Comprar ahora</button></a>
+                </div>
             </div>
         </section>
 
@@ -136,3 +210,4 @@
 
 </body>
 </html>
+
